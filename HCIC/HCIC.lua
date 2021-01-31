@@ -67,8 +67,6 @@ function HCIC:DispatchAddonMessage(prefix, text, channel, sender)
 		resolvedHandler = resolvedHandler[args[i]]
 	
 		if type(resolvedHandler) == "function" then
-			DEFAULT_CHAT_FRAME:AddMessage("(" .. prefix .. ") Handling " .. args[i] .. "(" .. string.join(", ", unpack(args, i + 1)) .. ")");
-		
 			resolvedHandler(unpack(args, i + 1))
 			return
 		end
@@ -124,7 +122,7 @@ function HCIC:Init()
 
 			chatMouseover:SetScript("OnEnter", function(self)
 				if UnitAffectingCombat("player") or C_PetBattles.IsInBattle() then
-					self:FadeIn(self, 0.5)
+					HCIC:FadeIn(self, 0.5)
 				end
 			end)
 			chatMouseover:SetScript("OnLeave", function(self)
@@ -261,11 +259,11 @@ WorldFrame:HookScript(
 function HCIC:IsInArray(array, s)
 	for _, v in pairs(array) do
 		if (v == s) then
-			return true;
+			return true
 		end
 	end
 	
-	return false;
+	return false
 end
 
 hooksecurefunc("FCF_Tab_OnClick", function(self)
@@ -273,4 +271,4 @@ hooksecurefunc("FCF_Tab_OnClick", function(self)
 	if chatFrame.isDocked then
 		HCIC1.Frames[1] = chatFrame
 	end
-end);
+end)
