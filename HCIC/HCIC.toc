@@ -1,0 +1,10 @@
+## Interface: 90002
+## X-Min-Interface: 90002
+## Title: |cffffd200Hide chat in combat|r
+## Notes: Hide chat upon receiving DBM or BigWigs pull timers.
+## LoadOnDemand: 0
+## DefaultState: enabled
+## Author: Warpten
+## Version: 1.0.0
+
+HCIC.lua
